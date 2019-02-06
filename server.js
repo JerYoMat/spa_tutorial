@@ -15,6 +15,14 @@ app.use(express.static('public'));
 // Allow front-end access to node_modules folder
 app.use('/scripts', express.static(`${__dirname}/node_modules/`));
 
+// Parse POST data as URL encoded data
+app.use(bodyParser.urlencoded({
+    extended: true,
+  }));
+  
+  // Parse POST data as JSON
+  app.use(bodyParser.json());
+
 // Express Error handler
 const errorHandler = (err, req, res) => {
     if (err.response) {
