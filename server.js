@@ -1,4 +1,5 @@
 require('dotenv').config(); // read .env files
+const bodyParser = require('body-parser');
 const { getRates, getSymbols, } = require('./lib/fixer-service'); 
 const { convertCurrency } = require('./lib/free-currency-service');
 const express = require('express');
